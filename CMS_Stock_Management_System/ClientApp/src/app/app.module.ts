@@ -9,6 +9,13 @@ import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
 import { CounterComponent } from './counter/counter.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
+import { ListVehicleComponent } from "./vehicle/list-vehicle.component";
+import { PageNotFoundComponent } from "./error/page-not-found.component";
+import { CreateVehicleComponent } from "./create-vehicle/create-vehicle.component";
+import { CreateVehicleCanDeactivateService } from "./create-vehicle/create-vehicle-can-deactivate-guard.service";
+import { VehicleDetailsComponent } from './vehicle/vehicle-details/vehicle-details.component';
+import { VehicleService } from "./services/vehicle.service";
+import { VehicleFilterPipe } from "./vehicle/vehicle-filter.pipe";
 
 @NgModule({
   declarations: [
@@ -16,7 +23,12 @@ import { FetchDataComponent } from './fetch-data/fetch-data.component';
     NavMenuComponent,
     HomeComponent,
     CounterComponent,
-    FetchDataComponent
+    FetchDataComponent,
+    ListVehicleComponent,
+    PageNotFoundComponent,
+    CreateVehicleComponent,
+    VehicleDetailsComponent,
+    VehicleFilterPipe
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -28,7 +40,7 @@ import { FetchDataComponent } from './fetch-data/fetch-data.component';
       { path: 'fetch-data', component: FetchDataComponent },
     ])
   ],
-  providers: [],
+  providers: [CreateVehicleCanDeactivateService, VehicleService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -9,11 +9,13 @@ export class CreateVehicleCanDeactivateService implements CanDeactivate<CreateVe
 
     
     canDeactivate(component: CreateVehicleComponent): boolean {
-        if(component.createVehicleForm.dirty){
-            return confirm("Are you sure you want to discard your changes?");
-        }
-        else{
-            return true;
-        }
+        //if(component.createVehicleForm.dirty){
+        //    return confirm("Are you sure you want to discard your changes?");
+        //}
+        //else{
+        //    return true;
+        //}
+
+        return true;
     }
 }
