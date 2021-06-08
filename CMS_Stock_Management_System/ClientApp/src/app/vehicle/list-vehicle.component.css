@@ -1,0 +1,13 @@
+.verticalAlign
+{
+    display: flex;
+    align-items: center;
+}
+
+.pointerCursor{
+    cursor: pointer;
+}
+
+button.btn{
+    width:70px;
+}

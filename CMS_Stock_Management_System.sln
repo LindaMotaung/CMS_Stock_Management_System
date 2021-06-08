@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CMS_Stock_Management_System", "CMS_Stock_Management_System\CMS_Stock_Management_System.csproj", "{2E342486-DB8F-40EB-A9CB-8680640DEBEB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CMS_Stock_Management_System.Tests", "CM_Stock_Management_System.Tests\CMS_Stock_Management_System.Tests.csproj", "{2D2E39DA-2F61-4805-82EF-2B5EACBE5D2A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2E342486-DB8F-40EB-A9CB-8680640DEBEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E342486-DB8F-40EB-A9CB-8680640DEBEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E342486-DB8F-40EB-A9CB-8680640DEBEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E342486-DB8F-40EB-A9CB-8680640DEBEB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D2E39DA-2F61-4805-82EF-2B5EACBE5D2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D2E39DA-2F61-4805-82EF-2B5EACBE5D2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D2E39DA-2F61-4805-82EF-2B5EACBE5D2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D2E39DA-2F61-4805-82EF-2B5EACBE5D2A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {37E71486-59A9-4112-B882-4122FD6174AB}
+	EndGlobalSection
+EndGlobal

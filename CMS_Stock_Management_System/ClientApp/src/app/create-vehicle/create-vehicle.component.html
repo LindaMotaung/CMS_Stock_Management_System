@@ -1,0 +1,86 @@
+<form #vehicleForm="ngForm" ngNativeValidate (ngSubmit)="saveVehilce(vehicleForm);">
+  <div class='container'>
+    <div class='panel panel-primary'>
+      <div class='panel-heading'>
+        <h3 class='panel-title'>Create Vehicle</h3>
+      </div>
+
+      <div class='panel-body'>
+
+       <div class='form-group' [class.has-error]='vehicleMakeControl.invalid && vehicleMakeControl.touched'
+       [class.has-success]='vehicleMakeControl.valid'>
+          <!-- <label for='vehicleMake' class='control-label'>Vehicle Make</label> -->
+          <label for='vehicleMake'>Vehicle Make</label>
+          <input class='form-control' required name="vMake" [(ngModel)]="vehicleMake" id='vehicleMake' type='text' #vehicleMakeControl='ngModel'>
+          <span class='help-block' *ngIf='vehicleMakeControl.invalid && vehicleMakeControl.touched'>
+            Vehicle Make is required
+          </span>
+        </div>
+
+        <div class='form-group'>
+          <label for='vehicleModel'>Vehicle Model</label>
+          <input class='form-control' name="vModel" [(ngModel)]="vehicleModel" id='vehicleModel' type='text'>
+        </div>
+
+        <div class='form-group'>
+          <label>Fuel Type</label>
+          <div class="form-control">
+            <label class="radio-inline">
+              <input type="radio" value="petrol" name="fType" [(ngModel)]="fuelType">Petrol
+            </label>
+
+            <label class="radio-inline">
+              <input type="radio" value="diesel" name="fType" [(ngModel)]="fuelType">Diesel
+            </label>
+          </div>
+        </div>
+
+        <div class='form-group'>
+          <div class="form-control">
+            <label class="checkbox-inline">
+              <input type="checkbox" name="isActive" [(ngModel)]="isActive"> Is Active
+            </label>
+          </div>
+        </div>
+
+        <div class='form-group'>
+          <label for="productionStage">Production Stage</label>
+          <select id="productionStage" name="productionStage" class="form-control" [(ngModel)]="productionStage">
+            <option *ngFor="let x of prodStages" [value]="x.id">{{x.stageName}}</option>
+          </select>
+        </div>
+
+        <div class="row">
+          <div class='form-group col-md-5'>
+            <label for='dateSold'>Date Sold</label>
+            <input class='form-control' name="vDateSold" [(ngModel)]="dateSold" id='dateSold' bsDatepicker type='text' [bsConfig]="datePickerColor">
+          </div>
+        </div>
+
+        <div class="row">
+          <div class='form-group col-md-5'>
+            <label for='vphotoPath'>Photo Path</label>
+            <input class='form-control' name="vphotoPath" [(ngModel)]="photoPath" id='photoPath'>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <button (click)="togglePhotoPreview()" class="btn btn-primary"
+          *ngIf="photoPath !== null && photoPath !== ''"> {{photoPreview ? "Hide " : "Show"}} Preview</button>
+        </div>
+
+        <div class="form-group">
+          <img [src]='photoPath' height='200px' width='200px' *ngIf="photoPreview && photoPath !== null && photoPath !== ''"/>
+        </div>
+
+      </div>
+
+      <div class='panel-footer'>
+        <button type="submit" class="btn btn-primary" [disabled]="vehicleForm.invalid">Save</button>
+      </div>
+
+    </div>
+  </div>
+</form>
+
+{{vehicleForm.value | json}}

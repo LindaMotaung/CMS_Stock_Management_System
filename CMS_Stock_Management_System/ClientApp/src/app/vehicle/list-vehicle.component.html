@@ -1,0 +1,67 @@
+<div class='container'>
+    <div class='form-group'>
+        <input type="text" class='form-control' placeholder='Search By Vehicle Make' style='width: 300px' [(ngModel)]='searchTerm'
+        />
+    </div>
+    <div class='panel panel-primary' *ngFor='let vehicleIterator of vehicle | searchVehicleFilter: searchTerm' [class.panel-success]='_selectedVehicleId === vehicleIterator.Id'>
+        <div class='panel-heading'>
+            <h3 class='panel-title'>{{vehicleIterator.vehicleType}}</h3>
+        </div>
+
+        <div (click)='onClick(vehicleIterator.Id)' class='pointerCursor'>
+            <div class='panel-body'>
+                <div class='col-xs-10'>
+                    <div class='row verticalAlign'>
+                        <div class='col-xs-4'>
+                            <img [src]='vehicleIterator.imagePath' width='200px' height='200px' />
+                        </div>
+
+                        <div class='col-xs-8'>
+
+                            <div class='row'>
+
+                                <div class='col-xs-6'>
+                                    Vehicle Mass
+                                </div>
+
+                                <div class='col-xs-6'>
+                                    : {{vehicleIterator.vehicleMass}}
+                                </div>
+
+                                <div class='col-xs-6'>
+                                    Vehicle Make
+                                </div>
+
+                                <div class='col-xs-6'>
+                                    : {{vehicleIterator.vehicleMake}}
+                                </div>
+
+                                <div class='col-xs-6'>
+                                    Vehicle Model
+                                </div>
+
+                                <div class='col-xs-6'>
+                                    : {{vehicleIterator.vehicleModel}}
+                                </div>
+
+                                <div class='col-xs-6'>
+                                    Vehicle Year
+                                </div>
+
+                                <div class='col-xs-6'>
+                                    : {{vehicleIterator.vehicleYear}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class='panel-footer'>
+            <button class='btn btn-primary' (click)='viewVehicle()'>View</button>
+            <button class='btn btn-primary'>Edit</button>
+            <button class='btn btn-danger'>Delete</button>
+        </div>
+    </div>
+</div>

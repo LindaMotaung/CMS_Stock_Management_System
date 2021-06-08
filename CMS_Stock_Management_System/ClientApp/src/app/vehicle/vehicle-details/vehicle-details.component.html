@@ -1,0 +1,58 @@
+<div class='container'>
+    <div class='panel panel-primary'>
+        <div class='panel-heading'>
+            <h3 class='panel-title'>{{vehicle.vehicleType}}</h3>
+        </div>
+        <div class='panel-body'>
+            <div class='col-xs-10'>
+                <div class='row verticalAlign'>
+                    <div class='col-xs-4'>
+                        <img [src]='vehicle.imagePath' width='200px' height='200px' />
+                    </div>
+
+                    <div class='col-xs-8'>
+
+                        <div class='row'>
+
+                            <div class='col-xs-6'>
+                                Vehicle Mass
+                            </div>
+
+                            <div class='col-xs-6'>
+                                : {{vehicle.vehicleMass}}
+                            </div>
+
+                            <div class='col-xs-6'>
+                                Vehicle Make
+                            </div>
+
+                            <div class='col-xs-6'>
+                                : {{vehicle.vehicleMake}}
+                            </div>
+
+                            <div class='col-xs-6'>
+                                Vehicle Model
+                            </div>
+
+                            <div class='col-xs-6'>
+                                : {{vehicle.vehicleModel}}
+                            </div>
+
+                            <div class='col-xs-6'>
+                                Vehicle Year
+                            </div>
+
+                            <div class='col-xs-6'>
+                                : {{vehicle.vehicleYear}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class='panel-footer'>
+            <a class='btn btn-primary' [routerLink]="['/home', {id: vehicle.Id}]">Back to List</a>
+        <button class='btn btn-primary pull-right' (click)='viewNextVehicle()'>View Next Vehicle</button>
+        </div>
+    </div>
+</div>
